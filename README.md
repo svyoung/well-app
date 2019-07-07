@@ -14,7 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Code challenge test using React to create a form builder for scheduling appointments. No physical database was implemented - most datasets are stored in JSON files under `data` folder.
 
 ### Libraries used
-* Moment
-* React Day Picker
+* [Moment](https://github.com/moment/moment)
+* [React Day Picker](https://github.com/gpbl/react-day-picker)
 
 
