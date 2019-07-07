@@ -1,13 +1,186 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+input, select {
+  font-size: 1rem !important;
+  outline: none !important;
+}
+
+input::-webkit-input-placeholder {
+  color: #e1e1e1 !important;
+}
+
+select option:disabled
+{ 
+    display:none;
+}
+
+/* textarea:focus, input:focus{
+  outline: none !important;
+  box-shadow: unset !important;
+  border: unset !important;
+} */
+
+.main-app {
+  position: relative;
+}
+
+.main-app header {
+  background-image: url('../src/img/header.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 470px;
+  min-height: 100px;
+  margin-bottom: 30px;
+}
+.main-app .appointments {
+  margin: 0 0 10px;
+}
+.main-app h4 {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #868686;
+  padding-left: 10px;
+}
+.main-app .appointment-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.main-app .appointment {
+  padding: 20px;
+  background-color: #fff;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px #e9e9e9;
+  margin-right: 40px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.main-app .appointment::before {
+  content: '';
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 35.7 88.1' width='20px' height='30px' style='enable-background:new 0 0 35.7 88.1;' xml:space='preserve'%3E%3Cg%3E%3Cpath fill='%236599ff' d='M28.8,4c0,0-0.8-4-4.7-4C20.1,0,0,0,0,0s4.8,0.4,4.8,4v74.9l12.4-7.6l11.5,7.6L28.8,4L28.8,4z'/%3E%3C/g%3E%3C/svg%3E%0A");
+  width: 20px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: -1px;
+  right: 20px;
+}
+.main-app .appointment:nth-child(3n) {
+  margin-right: 0;
+}
+.main-app .appointment span {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #969696;
+  font-weight: 700;
+  min-width: 115px;
+  display: inline-block;
+}
+.main-app .appointment strong {
+  font-weight: 300;
+  font-size: 14px;
+}
+.main-app .appointment a {
+  border-bottom: 1px dotted #007bff;
+  font-weight: 400;
+  transition: ease 0.5s all;
+}
+.main-app .appointment a:hover {
+  text-decoration: none;
+}
+.main-app .form-start {
+  border-radius: 16px;
+  box-shadow: 0 2px 10px #eceaea;
+  padding: 30px;
+}
+
+.main-app .DayPicker-Month,
+.DayPicker {
+  width: 100%;
+}
+.DayPicker-Month {
+  margin: 0 !important;
+}
+.DayPicker-Weekday {
+  font-weight: bold !important;
+}
+.DayPicker-Day {
+  border-radius: 0 !important;
+}
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  background-color: #6599ff !important;
+}
+.DayPicker-Caption {
+  padding: 0.5em 0.5em !important;
+}
+
+.form-start label {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #6599ff;
+}
+
+.form-start input, .form-start select {
+  border-radius: unset;
+  border: 0;
+  border-bottom: 1px dotted #cecaca;
+}
+.form-start input.missing {
+  border-bottom: 1px dotted red;
+}
+.form-start select.missing {
+  border: 1px solid red;
+}
+.form-start .submit-button {
+  background-color: #6599ff;
+  color: white;
+  border: 0;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+.form-start .submit-button:hover {
+  background-color: #4868a9;
+}
+.message {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  width: 100%;
+  display: block;
+}
+.message i {
+  padding-right: 10px;
+}
+.success-message {
+  background-color: #dff4df;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  text-align: center;
+  border: 1px solid green;
+  font-size: 14px;
+  color: green;
+}
+.error-message {
+  background: #ffdfdf;
+  color: #bc0808;
+}
+
