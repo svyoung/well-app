@@ -21,6 +21,8 @@ Currently choices for time are in increments of 15 minutes starting from 8:00AM 
 * July 23, 2019 01:15 PM - 01:45 PM
 * July 30, 2019 10:30 AM - 11:00 AM
 
+Then of course, there are the date and times of ones you submit an appointment
+
 ### Functionality
 * Detects overlap appointment before form submit
 * Submitted appointments gets pushed into the existing appointment list, updating booked appointments to compare against 
