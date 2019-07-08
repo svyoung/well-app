@@ -63,6 +63,9 @@ class App extends React.Component {
       last_name: '',
       phone: '',
       email: '',
+      selected_date: '',
+      selected_start_time: '',
+      selected_end_time: '',
       reason_options: ["Checkup", "Experiencing Symptoms", "Follow Up", "Miscellaneous"],
       reason: '',
       start_time_disabled: true,
@@ -211,11 +214,11 @@ class App extends React.Component {
         reason: this.state.reason
       });
       state.existingAppts.push({
-        "date" : `${this.state.selectedDay.toISOString().split('T')[0]}`,
-        "start_time" :  `${this.state.selected_start_time}`,
-        "end_time" : `${this.state.selected_end_time}`
+        "date": `${this.state.selectedDay.toISOString().split('T')[0]}`,
+        "start_time":  `${this.state.selected_start_time}`,
+        "end_time": `${this.state.selected_end_time}`
       });
-      // reset some states && evaluate overlap
+      // reset some states
       this.resetState();
     }
   }
@@ -228,15 +231,15 @@ class App extends React.Component {
           <div className="container">
             <header></header>
             <div className="form-group row appointments">
-              <h4><i class="fa fa-calendar"></i> Appointments</h4>
+              <h4><i className="fa fa-calendar"></i> Appointments</h4>
               <div className="appointment-container">
-                {appointments.map(appt => 
-                  <Appointments data={appt} />
+                {appointments.map((appt, index) => 
+                  <Appointments key={index} data={appt} />
                 )}
               </div>
               
             </div>
-            <h4><i class="fa fa-mouse-pointer"></i> Schedule an appointment</h4>
+            <h4><i className="fa fa-mouse-pointer"></i> Schedule an appointment</h4>
             <div className="form-start">
               <div className="row">
                 <div className="form-group col">
@@ -272,12 +275,12 @@ class App extends React.Component {
                   <div className="form-group col">
                     <div className="form-group">
                       <label htmlFor="date">Date *</label>
-                      <input type="text" name="selected_date" disabled={true} className={`form-control form-control-lg selected_date ${this.state.required_fields.selected_date}`} value={this.state.selected_date}/>
+                      <input type="text" name="selected_date" data-type="selected_date" disabled={true} className={`form-control form-control-lg selected_date ${this.state.required_fields.selected_date}`} value={this.state.selected_date} onChange={this.changeHandler}/>
                     </div>
                     <div className="form-group start-time">
                       <label htmlFor="start_time">Start Time *</label>
-                      <select className={`form-control form-control-lg start_time ${this.state.required_fields.selected_start_time}`} data-time="start" disabled={this.state.start_time_disabled} onChange={this.changeTime} required="required">
-                        <option value=""></option>
+                      <select className={`form-control form-control-lg start_time ${this.state.required_fields.selected_start_time}`} data-time="start" disabled={this.state.start_time_disabled} value={this.state.selected_start_time} onChange={this.changeTime} required="required">
+                        {/* <option value=""></option> */}
                         {start_time.map((time, index) =>
                           <option key={index} value={time.time} disabled={(time.hard_disable) ? time.hard_disable : time.disabled}>{time.display}</option>
                         )}
@@ -285,9 +288,9 @@ class App extends React.Component {
                     </div>
                     <div className="form-group end-time">
                       <label htmlFor="end_time">End Time *</label>
-                      <select className={`form-control form-control-lg end_time ${this.state.required_fields.selected_end_time}`} onChange={this.changeTime} data-time="end" disabled={this.state.end_time_disabled} onChange={this.changeTime} required="required">
-                      <option value=""></option>
-                      {end_time.slice(1).map((time, index) =>
+                      <select className={`form-control form-control-lg end_time ${this.state.required_fields.selected_end_time}`} onChange={this.changeTime} data-time="end" value={this.state.selected_end_time} disabled={this.state.end_time_disabled} required="required">
+                      {/* <option value=""></option> */}
+                      {end_time.map((time, index) =>
                           <option key={index} value={time.time} disabled={(time.hard_disable) ? time.hard_disable : time.disabled} selected={time.selected}>{time.display}</option>
                         )}
                       </select>
@@ -302,7 +305,7 @@ class App extends React.Component {
               <div className="row">
                 <div className="form-group col">
                     <label>Reason for visit *</label>
-                    <select className={`reasons-vist form-control form-control-lg reason ${this.state.required_fields.reason}`} data-type="reason" onChange={this.changeHandler} required="required">
+                    <select className={`reasons-vist form-control form-control-lg reason ${this.state.required_fields.reason}`} data-type="reason" onChange={this.changeHandler} value={this.state.reason} required="required">
                       <option value=""></option>
                       {this.state.reason_options.map( (reason, index) => 
                           <option value={reason} key={index}>{reason}</option>

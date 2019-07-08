@@ -1,5 +1,10 @@
 export default [
     {
+        "time": "",
+        "display": "",
+        "selected": "selected"     
+    },
+    {
         "time": "08:00",
         "display": "08:00 AM",
         "disabled": false        

@@ -1,5 +1,10 @@
 export default [
     {
+        "date" : "2019-07-22",
+        "start_time" : "01:30",
+        "end_time" : "02:30"
+    },
+    {
         "date" : "2019-07-15",
         "start_time" : "09:15",
         "end_time" : "09:45"
@@ -38,5 +43,15 @@ export default [
         "date" : "2019-07-17",
         "start_time" : "14:00",
         "end_time" : "14:30"
+    },
+    {
+        "date" : "2019-07-23",
+        "start_time" : "13:15",
+        "end_time" : "13:45"
+    },
+    {
+        "date" : "2019-07-30",
+        "start_time" : "10:30",
+        "end_time" : "11:00"
     },
 ];
