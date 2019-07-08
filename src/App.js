@@ -134,7 +134,6 @@ class App extends React.Component {
         if(start <= app_end && end >= app_start) {
           this.setState({overlap: true, overlap_msg: {type: 'error', message: `Sorry! The time you've selected conflicts with an existing appointment from ${moment(app_start).format('LT')} to ${moment(app_end).format('LT')}. Please select another time.`}});
           isOverlapped = true;
-          return;
         } 
       }
       // evaluate lunch overlap
@@ -142,7 +141,6 @@ class App extends React.Component {
       if(start <= lunch_end && end >= lunch_start) {
         this.setState({overlap: true, overlap_msg: {type: 'error', message: "Sorry! This time slot overlaps with lunch period off. Please select another time."}});
         isOverlapped = true;
-        return;
       } 
     });
     if(!isOverlapped) this.setState({overlap: false, overlap_msg: ''});
@@ -188,7 +186,7 @@ class App extends React.Component {
       }
     });
     this.setState({state});
-    if(!overlap && validForm == count) {
+    if(!overlap && validForm === count) {
       this.setState({
         form_error: {error: false, message: ''},
         submit_success: {
@@ -291,7 +289,7 @@ class App extends React.Component {
                       <select className={`form-control form-control-lg end_time ${this.state.required_fields.selected_end_time}`} onChange={this.changeTime} data-time="end" value={this.state.selected_end_time} disabled={this.state.end_time_disabled} required="required">
                       {/* <option value=""></option> */}
                       {end_time.map((time, index) =>
-                          <option key={index} value={time.time} disabled={(time.hard_disable) ? time.hard_disable : time.disabled} selected={time.selected}>{time.display}</option>
+                          <option key={index} value={time.time} disabled={(time.hard_disable) ? time.hard_disable : time.disabled}>{time.display}</option>
                         )}
                       </select>
                     </div>
