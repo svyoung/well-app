@@ -19,5 +19,5 @@ Currently choices for time are in increments of 15 minutes starting from 8:00AM 
 
 ### Functionality
 * Detects overlap appointment before form submit
-* Submitted appointments gets pushed into the existing appointment list
+* Submitted appointments gets pushed into the existing appointment list, updating booked appointments to compare against 
 
