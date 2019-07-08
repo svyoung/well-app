@@ -53,5 +53,5 @@ export default [
         "date" : "2019-07-30",
         "start_time" : "10:30",
         "end_time" : "11:00"
-    },
+    }
 ];
