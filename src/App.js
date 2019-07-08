@@ -87,7 +87,6 @@ class App extends React.Component {
   handleDayClick(day, modifiers = {}) {
     let date = (new Date(day)).toISOString().split('T')[0],
         formattedDate = moment(date).format('LL');
-    console.log('selected day: ' + date + ' disabled? ' + modifiers.disabled);
     if (modifiers.disabled) {
       this.setState({selectedDay: null, selected_date: ''})
       return;
