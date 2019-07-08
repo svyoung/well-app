@@ -26,6 +26,7 @@ Then of course, there are the date and times of ones you submit an appointment
 ### Functionality
 * Detects overlap appointment before form submit
 * Submitted appointments gets pushed into the existing appointment list, updating booked appointments to compare against 
+* Fully responsive
 
 ### Libraries used
 * [Moment](https://github.com/moment/moment)

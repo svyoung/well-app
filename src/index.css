@@ -184,3 +184,23 @@ select option:disabled
   color: #bc0808;
 }
 
+@media (max-width: 667px) {
+  .row {
+    display: block;
+  }
+  .col-7 {
+    max-width: 100%;
+  }
+  .main-app header {
+    background-size: 95%;
+  }
+  .main-app .appointment-container {
+    display: block;
+    grid-template-columns: unset;
+  }
+  .main-app .appointment {
+      margin-right: 0;
+      width: 100%;
+  }
+}
+
