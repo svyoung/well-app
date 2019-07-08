@@ -29,7 +29,7 @@ class App extends React.Component {
       reason: '',
       existingAppts: bookings,
       appointments: [{
-        name: 'Jane Doe', phone: '555-555-5555', email: 'test@gmail.com', appointment: 'July 22, 2019 01:30 - 02:30', reason: 'Checkup'
+        name: 'Jane Doe', phone: '555-555-5555', email: 'test@gmail.com', appointment: 'July 22, 2019 01:30 PM - 02:30 PM', reason: 'Checkup'
       }],     
       start_time: times,
       end_time: JSON.parse(JSON.stringify(times)),
