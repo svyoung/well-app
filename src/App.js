@@ -63,6 +63,7 @@ class App extends React.Component {
       last_name: '',
       phone: '',
       email: '',
+      selectedDay: new Date(),
       selected_date: '',
       selected_start_time: '',
       selected_end_time: '',
