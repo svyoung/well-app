@@ -13,7 +13,7 @@ Code challenge test using React to create a form builder for scheduling appointm
 
 Currently choices for time are in increments of 15 minutes starting from 8:00AM to 5:00PM with a lunch break from 12:00PM - 1:00PM. (This was chosen by standard doctors' hours).
 
-#### Dates to check against
+#### Date and times to check against
 * July 22, 2019 01:30 PM - 02:30 PM
 * July 15, 2019 09:15 AM - 09:45 AM, 03:30 PM - 04:30 PM
 * July 16, 2019 08:30 AM - 09:00 AM, 10:15 AM - 10:45 AM, 01:00 PM - 01:30 PM
